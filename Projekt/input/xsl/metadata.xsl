@@ -17,7 +17,14 @@
           </title>
           <xsl:copy-of select="document('../../index.xml')//article[temp-path=$temp_path]/date"/>
           <xsl:copy-of select="document('../../index.xml')//article[temp-path=$temp_path]/timestamp"/>
-          <xsl:copy-of select="document('../../index.xml')//article[temp-path=$temp_path]/new"/>
+          <new>
+            <xsl:if test="@new">
+              <xsl:text>true</xsl:text>
+            </xsl:if>
+            <xsl:if test="not(@new)">
+              <xsl:text>false</xsl:text>
+            </xsl:if>
+          </new>
           <original-path>
             <xsl:value-of select="$original_path"/>
           </original-path>

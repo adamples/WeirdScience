@@ -65,13 +65,7 @@ include "php/common.php5";
       /* Artykuł */
       if (is_file ("$path/index.html")) {
 
-        $uploaded = "ftp/$name.html";
-
-        if (is_file($uploaded))
-          $mtime = filemtime($uploaded);
-        else
-          $mtime = time();
-
+        $mtime = filemtime("$path/index.html");
         $mtime = strtotime(date("Y-m-d"), $mtime);
 
         $article = array (
@@ -149,7 +143,6 @@ include "php/common.php5";
           "<path>" . $element["path"] . "</path>" .
           "<timestamp>" . $element["mtime"] . "</timestamp>" .
           "<date>" . $date . "</date>" .
-          "<new>" . ($element["mtime"] > time() - 3600 * 24 * 30 ? "true" : "false") . "</new>" .
           "<temp-path>" . $element["temp_path"] . "</temp-path>" .
           "<escaped-title>" . $element["escaped_title"] . "</escaped-title>" .
           "</article>";
@@ -192,7 +185,7 @@ include "php/common.php5";
       $this->add_dir ("input/player", "output/player");
 
       $this->make->addRule (array ("index.xml", "input/xsl/index.php.xsl"), "output/index.php", "xsl");
-      $this->make->addRule (array ("index.xml", "input/xsl/menu.xsl"), "tmp/menu.html", "xsl");
+      $this->make->addRule (array ("index.xml", "input/xsl/menu.xsl", "tmp/metadata.xml"), "tmp/menu.html", "xsl");
       $this->make->addRule (array ("output/Strona główna.html"), "output/index.html", "cat");
 
       $this->make->addRule (array ("tmp/metadata.xml", "input/xsl/images.js.xsl"), "output/js/images.js", "xsl");

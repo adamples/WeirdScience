@@ -56,17 +56,17 @@
 
 
       <xsl:template match="article">
+        <xsl:variable name="title" select="title"/>
+        <xsl:variable name="new" select="document('../../tmp/metadata.xml')//article-metadata[title=$title]/new"/>
         <li>
-          <xsl:if test="new and new='true'">
+          <xsl:if test="$new='true'">
             <xsl:attribute name="class">new-article</xsl:attribute>
           </xsl:if>
           <a href="{fn:encode-for-uri(title)}.html">
             <xsl:value-of select="title"/>
-            <xsl:if test="new and new='true'">
+            <xsl:if test="$new='true'">
               <small>
-                <xsl:text> (</xsl:text>
-                <xsl:value-of select="date"/>
-                <xsl:text>)</xsl:text>
+                <xsl:text> (nowe!)</xsl:text>
               </small>
             </xsl:if>
           </a>
