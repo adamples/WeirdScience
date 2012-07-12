@@ -37,13 +37,13 @@
 
 
   function randomizeImage () {
-    var ids = Array ("lt", "rt", "lb", "rb");
+    var ids = Array ("lt", "ct", "rt", "lb", "cb", "rb");
 
     if (!$("div#random").hasClass ("hovered")) {
 
-      ind = uniqueRandom (4, 0, images.length - 1);
+      ind = uniqueRandom (6, 0, images.length - 1);
 
-      for (i = 0; i < 4; ++i) {
+      for (i = 0; i < 6; ++i) {
         article = images [ind [i]];
         image = article.images [Math.floor (Math.random () * article.images.length)];
         $("a#" + ids [i]).attr ("href", article.title + ".html");
@@ -62,7 +62,7 @@
       $(this).after ("<img class='larger' src='" + larger + "' alt='Trochę większa ilustracja'/>");
     });
 
-    $("div#menu").prepend ("<div id='random'><a id='lt'><img></a><a id='rt'><img></a><a id='lb'><img></a><a id='rb'><img></a></div>");
+    $("div#menu").prepend ("<div id='random'><a id='lt'><img></a><a id='ct'><img></a><a id='rt'><img></a><a id='lb'><img></a><a id='cb'><img></a><a id='rb'><img></a></div>");
 
 /*    $("div#menu").delegate ("div#random", "mouseover mouseleave", function (e){
       if (e.type == "mouseover")

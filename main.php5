@@ -65,11 +65,20 @@ include "php/common.php5";
       /* Artykuł */
       if (is_file ("$path/index.html")) {
 
+        $uploaded = "ftp/$name.html";
+
+        if (is_file($uploaded))
+          $mtime = filemtime($uploaded);
+        else
+          $mtime = time();
+
+        $mtime = strtotime(date("Y-m-d"), $mtime);
+
         $article = array (
           "type" => "article",
           "title" => $name,
           "path" => realpath ($path),
-          "mtime" => filemtime("$path/index.html"),
+          "mtime" => $mtime,
           "temp_path" => $this->article_temp_path ($name),
           "escaped_title" => $this->article_title_escape ($name),
           "images" => array ()
@@ -159,7 +168,7 @@ include "php/common.php5";
 
 
     protected function create_index () {
-      $doc = DOMDocument::loadXML("<index>" . $this->build_index($this->hierarchy) . "</index>");
+      $doc = DOMDocument::loadXML("<index><year>" . date("Y") . "</year>" . $this->build_index($this->hierarchy) . "</index>");
       $doc->encoding = "UTF-8";
       $doc->formatOutput = true;
       $doc->save ("index.xml");

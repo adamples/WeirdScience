@@ -48,11 +48,15 @@
             </div>
             <div id="footer">
               <p>
-                <xsl:text>copyright © 2011 Marek Ples </xsl:text>
+                <xsl:text>copyright © 2011 — </xsl:text>
+                <xsl:value-of select="document('../../index.xml')//year"/>
+                <xsl:text> Marek Ples </xsl:text>
                 <span class="gmail-email">
                   <xsl:text>moze.dzis</xsl:text>
                 </span>
-                <xsl:text> · design © 2011 Adam Ples </xsl:text>
+                <xsl:text> · design © 2011 — </xsl:text>
+                <xsl:value-of select="document('../../index.xml')//year"/>
+                <xsl:text> Adam Ples </xsl:text>
                 <span class="gmail-email">
                   <xsl:text>ples.adam</xsl:text>
                 </span>

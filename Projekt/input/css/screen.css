@@ -81,6 +81,10 @@
     clear : left;
     position : relative;
     top : -40px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
   }
 
   div#menu a {
@@ -191,7 +195,7 @@
 
   div#random {
     width : 380px;
-    height : 290px;
+    height : 190px;
     position : relative;
     left : 0;
     top : 0;
@@ -201,8 +205,8 @@
 
   div#random img {
     border-width : 0;
-    width : 180px;
-    height : 135px;
+    width : 113px;
+    height : 85px;
     position : absolute;
     margin : 0;
     padding : 0;
@@ -211,6 +215,11 @@
     -moz-transition: all 0.25s ease;
     -o-transition: all 0.25s ease;
     transition: all 0.25s ease;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    display: block;
   }
 
   div#random img:hover {
@@ -222,19 +231,29 @@
     top : 0px;
   }
 
+  div#random a#ct img {
+    left : 133px;
+    top : 0px;
+  }
+
   div#random a#rt img {
-    left : 200px;
+    left : 266px;
     top : 0px;
   }
 
   div#random a#lb img {
     left : 0px;
-    top : 155px;
+    top : 105px;
+  }
+
+  div#random a#cb img {
+    left : 133px;
+    top : 105px;
   }
 
   div#random a#rb img {
-    left : 200px;
-    top : 155px;
+    left : 266px;
+    top : 105px;
   }
 
   li.new-article a {
