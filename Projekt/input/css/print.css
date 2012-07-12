@@ -1,0 +1,18 @@
+
+ h1, div#menu, object {
+  display : none;
+ }
+
+ a, a:link, a:active, a:visited {
+  color : black;
+  text-decoration : none;
+ }
+
+ a[href^='http://'] {
+  text-decoration : underline;
+ }
+
+ div#footer {
+  font-size : 12px;
+  margin : 40px 0 0 0;
+ }

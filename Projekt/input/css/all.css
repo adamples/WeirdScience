@@ -1,0 +1,70 @@
+
+  body {
+    width : 600px;
+    margin : 0 auto;
+  }
+
+  img {
+    display : block;
+    max-width : 100%;
+    margin : 40px auto;
+  }
+
+  p.alert {
+    color : #ef2929;
+  }
+
+  p.author {
+    text-align : right;
+  }
+
+  p.signature {
+    font-family : 'Georgia', sans-serif;
+    font-size : 16px;
+    font-style : italic;
+    text-align : right;
+    margin : 40px;
+    top : 4px;
+  }
+
+  object {
+    display : block;
+    margin : 40px auto;
+    height : 360px;
+  }
+
+  div.illustrations img {
+    display : block;
+    margin : 40px auto 20px auto;
+    border : 1px solid #aaa;
+  }
+
+  div.illustrations p {
+    font-size : 13px;
+    margin : 0 0 40px 0;
+    text-align : center;
+  }
+
+  div#menu > ul {
+    list-style-type : none;
+  }
+
+  div#menu li.category:before, div#menu > ul > li:before {
+    content : "";
+  }
+
+  div#menu li.category {
+    margin-top: 20px;
+  }
+
+  span.gmail-email:before {
+    content : '<';
+  }
+
+  span.gmail-email:after {
+    content : '@gmail.com>';
+  }
+
+  div#counter {
+    display : none;
+  }

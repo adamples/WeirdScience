@@ -1,0 +1,45 @@
+
+  * {
+    text-shadow : 1px 1px 0px black;
+    margin : 0;
+    padding : 0;
+  }
+
+  html {
+    background : #080808 url('html-bg.png') scroll repeat-x left top;
+  }
+
+  body {
+    margin : 20px auto 40px auto;
+  }
+
+  h1 {
+    display : none;
+  }
+
+  a {
+    display : block;
+    text-align : center;
+  }
+
+  a, a:link {
+    color : #7af;
+    text-decoration : underline;
+  }
+
+  a:visited {
+    color : #748;
+  }
+
+  a:hover {
+    color : #6e3;
+  }
+
+  a:active {
+    color : #ef2929;
+  }
+
+  img {
+    border-width : 0;
+    margin-bottom : 20px;
+  }

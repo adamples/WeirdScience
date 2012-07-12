@@ -1,0 +1,242 @@
+
+  * {
+    text-shadow : 1px 1px 0px black;
+  }
+
+  html {
+    background : #040404;
+  }
+
+  body {
+    color : #ccc;
+    width : 1020px;
+    margin : 0px auto;
+    padding : 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    text-shadow : 2px 2px 1px black;
+    color : white;
+  }
+
+  a, a:link {
+    color : #7af;
+    text-decoration : underline;
+  }
+
+  a:visited {
+    color : #748;
+  }
+
+  a:hover {
+    color : #6e3;
+  }
+
+  a:active {
+    color : #ef2929;
+  }
+
+  img, div.illustrations a, object {
+    -webkit-box-shadow: 1px 1px 5px #000;
+    -moz-box-shadow: 1px 1px 5px #000;
+    -o-box-shadow: 1px 1px 5px #000;
+    box-shadow: 1px 1px 5px #000;
+  }
+
+  h1 {
+    color : transparent;
+    font-size : 0px;
+    background : transparent url('logo.png') scroll repeat-y 50% 0%;
+    height : 170px;
+    width : 420px;
+    margin-top : 10px;
+    z-index : 100;
+    float : left;
+  }
+
+  h1.frame-2 {
+    background-position : 50% -170px;
+  }
+
+  h1.frame-3 {
+    background-position : 50% 170px;
+  }
+
+  h1 object {
+    width : 0px;
+    height : 0px;
+    margin : 0;
+    padding : 0;
+    z-index : -1000;
+    opacity : 0;
+  }
+
+  div#menu {
+    background : #080808;
+    border : 1px solid #0d0d0d;
+    font-size : 13px;
+    width : 380px;
+    padding : 39px 19px 19px 19px;
+    float : left;
+    clear : left;
+    position : relative;
+    top : -40px;
+  }
+
+  div#menu a {
+    text-decoration : none;
+    text-shadow : 0px 0px 20px #666;
+  }
+
+  div#content {
+    margin : 0 auto 0 460px;
+    padding : 140px 0px 60px 0px;
+  }
+
+  div#footer {
+    clear : both;
+    padding : 20px;
+    background : #080808;
+    border : 1px solid #0d0d0d;
+    border-bottom : none;
+  }
+
+  div#footer p {
+    text-align : center;
+    font-size : 13px;
+    margin : 0;
+  }
+
+  div.illustrations {
+    text-align : center;
+    font-size : 0;
+    line-height : 0;
+    word-spacing : 0;
+    letter-spacing : 0;
+    margin : 20px auto 20px auto;
+    float : right;
+    width : 560px;
+    position : relative;
+    z-index : 10;
+  }
+
+  div.illustrations a {
+    display : inline-block;
+    width : 270px;
+    height : 200px;
+    overflow : hidden;
+    position : relative;
+    margin : 0 0 20px 0;
+    text-decoration : none;
+  }
+
+  div.illustrations a.even {
+    margin-left : 20px;
+  }
+
+  div.illustrations img {
+    margin : 0;
+    border : 0;
+  }
+
+  div.illustrations img.larger {
+    margin : 0;
+    border : 0;
+    opacity : 0;
+    position : absolute;
+    left : 0;
+    top : 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+
+  div.illustrations img.larger:hover {
+    opacity : 1;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+  }
+
+  div.illustrations p {
+    font-size : 14px;
+    line-height : 20px;
+    text-decoration : none;
+    color : white;
+    background : #080808;
+    background : rgba(32, 32, 32, 0.75);
+    height : 20px;
+    width : 268px;
+    margin : 0;
+    padding : 10px 0;
+    overflow : hidden;
+    position : absolute;
+    left : 1px;
+    top : auto;
+    bottom : 1px;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+  }
+
+
+  div.illustrations a:hover p {
+    height : 0;
+    padding : 0;
+    opacity : 0;
+  }
+
+  div#random {
+    width : 380px;
+    height : 290px;
+    position : relative;
+    left : 0;
+    top : 0;
+    margin-top : 40px;
+    margin-bottom : 40px;
+  }
+
+  div#random img {
+    border-width : 0;
+    width : 180px;
+    height : 135px;
+    position : absolute;
+    margin : 0;
+    padding : 0;
+    opacity : 0.75;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+  }
+
+  div#random img:hover {
+    opacity : 1.0;
+  }
+
+  div#random a#lt img {
+    left : 0px;
+    top : 0px;
+  }
+
+  div#random a#rt img {
+    left : 200px;
+    top : 0px;
+  }
+
+  div#random a#lb img {
+    left : 0px;
+    top : 155px;
+  }
+
+  div#random a#rb img {
+    left : 200px;
+    top : 155px;
+  }
+
+  li.new-article a {
+    color : #d82;
+  }

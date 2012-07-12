@@ -1,0 +1,172 @@
+
+  /* - Reset -------------------------------------------------------------- */
+
+  * {
+    margin          : 0;
+    outline         : 0;
+    padding         : 0;
+    text-decoration : none;
+    vertical-align  : baseline;
+  }
+
+  blockquote:before, blockquote:after, q:before, q:after {
+    content         : '';
+    content         : none;
+  }
+
+  :focus {
+    outline         : 0;
+  }
+
+  body {
+    font-family     : 'Verdana', 'Geneva', 'Tahoma', sans-serif;
+    font-size       : 14px;
+    line-height     : 20px;
+  }
+
+  p, h1, h2, h3, h4, h5, h6, blockquote {
+    position        : relative;
+  }
+
+  blockquote, h1, h2, h3, h4, h5, h6 {
+    font-family     : 'Cambria', 'Georgia', 'Times', serif;
+  }
+
+  /* - Reset koniec ------------------------------------------------------- */
+
+  /* - Nagłówki ----------------------------------------------------------- */
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight : normal;
+    font-style : italic;
+    margin : 20px 0;
+  }
+
+  h1 {
+    font-size : 28px;
+    line-height : 40px;
+    top : 10px;
+  }
+
+  h2 {
+    font-size : 26px;
+    line-height : 40px;
+    top : 11px;
+  }
+
+  h3 {
+    font-size : 24px;
+    line-height : 40px;
+    top : 11px;
+  }
+
+  h4 {
+    font-size : 22px;
+    line-height : 40px;
+    top : 12px;
+  }
+
+  h5 {
+    font-size : 20px;
+    top : 3px;
+  }
+
+  h6 {
+    font-size : 18px;
+    top : 3px;
+  }
+
+  /* - Nagłówki koniec ---------------------------------------------------- */
+
+  /* - Akapity ------------------------------------------------------------ */
+
+  p {
+    margin : 20px 0;
+    top : 4px;
+    text-align : justify;
+    word-spacing : 1px;
+  }
+
+  blockquote {
+    font-family : 'Georgia', sans-serif;
+    font-style : italic;
+    margin : 20px 40px 20px 40px;
+    top : 4px;
+    font-size : 15px;
+  }
+
+  /* - Akapity koniec ----------------------------------------------------- */
+
+  /* - Tekst -------------------------------------------------------------- */
+
+  sub {
+    font-size : 11px;
+    line-height : 20px;
+    position : relative;
+    top : 3px;
+    left : 0px;
+    margin : 0px 1px;
+  }
+
+  sup {
+    font-size : 11px;
+    line-height : 20px;
+    position : relative;
+    top : -6px;
+    left : 0px;
+    margin : 0px 1px;
+  }
+
+  /* - Tekst koniec ------------------------------------------------------- */
+
+  /* - Listy -------------------------------------------------------------- */
+
+  ul {
+    list-style-type : none;
+    text-indent : -19px;
+    margin : 20px auto 20px 40px;
+    position : relative;
+    top : 4px;
+  }
+
+  ol {
+    text-indent : 0px;
+    margin : 20px auto 20px 40px;
+    position : relative;
+    top : 4px;
+  }
+
+  li > ul, li > ol {
+    margin : 20px auto 20px 20px;
+    top : 0px;
+  }
+
+  ul > li:before {
+    content         : '— ';
+  }
+
+  /* - Listy koniec ------------------------------------------------------- */
+
+  /* - Tabelki ------------------------------------------------------------
+  table {
+    border          : 1px solid black;
+    border-collapse : collapse;
+    border-spacing  : 0;
+    margin          : 0 auto;
+  }
+
+  caption {
+    padding         : 24px 0 16px 0;
+    position        : relative;
+    text-align      : left;
+  }
+
+  td, th {
+    border          : 1px solid black;
+    font-size       : 14px;
+    padding         : 10px 10px 9px 10px;
+  }
+
+  /* - Tabelki koniec ----------------------------------------------------- */
+
+
