@@ -47,7 +47,10 @@
         article = images [ind [i]];
         image = article.images [Math.floor (Math.random () * article.images.length)];
         $("a#" + ids [i]).attr ("href", article.title + ".html");
-        $("a#" + ids [i] + " img").attr ("src", "thumbs/" + image);
+        $("a#" + ids [i] + " img")
+          .attr("src", "thumbs/" + image)
+          .attr("alt", article.title)
+          .attr("title", article.title);
       }
     }
     //setTimeout("randomizeImage()", 10000);

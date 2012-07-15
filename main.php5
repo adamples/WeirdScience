@@ -64,15 +64,24 @@ include "php/common.php5";
 
       /* Artykuł */
       if (is_file ("$path/index.html")) {
+        $title = $name;
 
         $mtime = filemtime("$path/index.html");
         $mtime = strtotime(date("Y-m-d"), $mtime);
+        $new = "false";
+
+        if ($name{0} == "!") {
+          $title = substr($name, 1);
+          $new = "true";
+        }
 
         $article = array (
           "type" => "article",
-          "title" => $name,
+          "name" => $name,
+          "title" => $title,
           "path" => realpath ($path),
           "mtime" => $mtime,
+          "new" => $new,
           "temp_path" => $this->article_temp_path ($name),
           "escaped_title" => $this->article_title_escape ($name),
           "images" => array ()
@@ -143,6 +152,7 @@ include "php/common.php5";
           "<path>" . $element["path"] . "</path>" .
           "<timestamp>" . $element["mtime"] . "</timestamp>" .
           "<date>" . $date . "</date>" .
+          "<new>" . $element["new"] . "</new>" .
           "<temp-path>" . $element["temp_path"] . "</temp-path>" .
           "<escaped-title>" . $element["escaped_title"] . "</escaped-title>" .
           "</article>";

@@ -20,20 +20,16 @@
           <ul>
             <xsl:apply-templates select="category"/>
           </ul>
-          <!--<p>
-            <xsl:text>Ogółem projektów: </xsl:text>
-            <xsl:value-of select="count(//article)"/>
-          </p>-->
         </div>
       </xsl:template>
 
 
       <xsl:template match="category[name='content']">
         <xsl:if test="articles/*">
-          <xsl:apply-templates select="articles"/>
+          <xsl:apply-templates select="articles/article"/>
         </xsl:if>
         <xsl:if test="subcategories/*">
-          <xsl:apply-templates select="subcategories"/>
+          <xsl:apply-templates select="subcategories/category"/>
         </xsl:if>
       </xsl:template>
 
@@ -43,12 +39,9 @@
           <xsl:value-of select="name"/>
           <xsl:if test="articles/* or subcategories/*">
             <ul>
-              <xsl:if test="articles/*">
-                <xsl:apply-templates select="articles"/>
-              </xsl:if>
-              <xsl:if test="subcategories/*">
-                <xsl:apply-templates select="subcategories"/>
-              </xsl:if>
+              <xsl:apply-templates select="articles/article|subcategories/category">
+                <xsl:sort select="concat(name, title)" data-type="text" order="ascending"/>
+              </xsl:apply-templates>
             </ul>
           </xsl:if>
         </li>
@@ -72,16 +65,5 @@
           </a>
         </li>
       </xsl:template>
-
-
-      <xsl:template match="articles">
-        <xsl:apply-templates select="article"/>
-      </xsl:template>
-
-
-      <xsl:template match="subcategories">
-        <xsl:apply-templates select="category"/>
-      </xsl:template>
-
 
   </xsl:stylesheet>
