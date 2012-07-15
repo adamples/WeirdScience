@@ -27,12 +27,13 @@ end
 box3 = Gtk::HBox.new(true, 5)
 build = Gtk::Button.new("Zbuduj")
 rebuild = Gtk::Button.new("Odbuduj")
+upgrade = Gtk::Button.new("Aktualizuj")
 update = Gtk::Button.new("Wyślij")
 status = Gtk::Button.new("Status")
 stop = Gtk::Button.new("Stop")
 clear = Gtk::Button.new("Wyczyść terminal")
 
-[build, rebuild, update, status, stop, clear].each do |widget|
+[build, rebuild, upgrade, update, status, stop, clear].each do |widget|
   box3.add(widget)
 end
 
@@ -70,6 +71,10 @@ end
 
 rebuild.signal_connect("clicked") do |w|
   spawn(term, "rm -r Projekt/tmp Projekt/output; php5 main.php5")
+end
+
+upgrade.signal_connect("clicked") do |w|
+  spawn(term, "git pull")
 end
 
 update.signal_connect("clicked") do |w|
