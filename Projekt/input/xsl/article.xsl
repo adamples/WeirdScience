@@ -42,8 +42,11 @@
               </h2>
               <xsl:apply-templates select="*"/>
               <p class="signature">
-                <xsl:text>Marek Ples,   </xsl:text>
+                <xsl:text>Marek Ples</xsl:text>
+                <!--
+                <xsl:text>,   </xsl:text>
                 <xsl:value-of select="document(concat('../../', $temp_path, '/metadata.xml'))//date"/>
+                -->
               </p>
             </div>
             <div id="footer">

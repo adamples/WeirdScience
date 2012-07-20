@@ -67,7 +67,7 @@ include "php/common.php5";
         $title = $name;
 
         $mtime = filemtime("$path/index.html");
-        $mtime = strtotime(date("Y-m-d"), $mtime);
+        $mtime = strtotime(date("Y-m-d", $mtime));
         $new = "false";
 
         if ($name{0} == "!") {
