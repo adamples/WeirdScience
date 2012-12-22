@@ -21,7 +21,8 @@ begin
     def connect(dummy = false)
       config = YAML::load(File.open("ftp.config"))
 
-      credentials, address = config["url"].split("@")
+      tmp = config["url"].split("@")
+      credentials, address = tmp[0..-2].join("@"), tmp.last
       @login, @password = credentials.split(":")
       @host, @port = address.split(":")
 
