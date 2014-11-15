@@ -24,6 +24,8 @@
   function uniqueRandom (n, min, max) {
     result = Array ();
 
+    if (max - min + 1 < n) n = max - min + 1;
+
     for (i = 0; i < n; ++i) {
       do {
         r = min + Math.floor (Math.random () * (max - min + 1));
@@ -43,7 +45,7 @@
 
       ind = uniqueRandom (6, 0, images.length - 1);
 
-      for (i = 0; i < 6; ++i) {
+      for (i = 0; i < ind.length; ++i) {
         article = images [ind [i]];
         image = article.images [Math.floor (Math.random () * article.images.length)];
         $("a#" + ids [i]).attr ("href", article.title + ".html");
