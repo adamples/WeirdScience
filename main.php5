@@ -194,7 +194,7 @@ include "php/common.php5";
       $this->add_dir ("input/js", "output/js");
       $this->add_dir ("input/player", "output/player");
 
-      $this->make->addRule (array ("index.xml", "input/xsl/index.php.xsl"), "output/index.php", "xsl");
+      //$this->make->addRule (array ("index.xml", "input/xsl/index.php.xsl"), "output/index.php", "xsl");
       $this->make->addRule (array ("index.xml", "input/xsl/menu.xsl", "tmp/metadata.xml"), "tmp/menu.html", "xsl");
       $this->make->addRule (array ("output/Strona główna.html"), "output/index.html", "cat");
 

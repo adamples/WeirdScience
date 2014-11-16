@@ -37,6 +37,12 @@ begin
       @checkout = config["checkout"]
       @data = config["data"]
 
+      @logger.info("host: #{@host}")
+      @logger.info("login: #{@login}")
+      @logger.info("password: #{@password}")
+      @logger.info("checkout: #{@checkout}")
+      @logger.info("ftp_root: #{@ftp_root}")
+
       @ftp = FtpWrapper.new(@host, @login, @password, @logger) unless dummy
     end
 
@@ -93,6 +99,7 @@ begin
 
 
     def scan(path, prefix = path)
+      @logger.info("Skanowanie #{path}")
       result = []
 
       Dir.new(path).each do |name|
@@ -123,7 +130,7 @@ begin
     def status
       @logger.info("Sprawdzanie statusu repozytorium")
 
-      connect(true)
+      connect
       on_ftp = scan(@checkout)
       on_data = scan(@data)
 
