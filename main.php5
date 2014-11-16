@@ -22,16 +22,18 @@ include "php/common.php5";
       $this->make->registerMethod (new MakeCoolThumb (), "cool-thumb");
       $this->make->registerMethod (new MakeThumb (800, 600, 95, false), "normal");
       $this->make->registerMethod (new MakeImageMetadata, "image-metadata");
-      $this->make->registerMethod (new MakeStrReplace (array ("&"), array ("&amp;")), "preprocessing");
+      $this->make->registerMethod (new MakeStrReplace (array ("&", "allowfullscreen>", "src=\"//"), array ("&amp;", "allowfullscreen=\"allowfullscreen\"> ", "src=\"http://")), "preprocessing");
       $this->make->registerMethod (new MakeExternal ("composite -gravity SouthWest \$2 \$1 \$o"), "watermark");
       $this->make->registerMethod (new MakeStrReplace (
         array (
           " PUBLIC \"XSLT-compat\" \"\"",
           " </script>",
+          " </iframe>",
           "/>",
         ), array (
           "",
           "</script>",
+          "</iframe>",
           ">"
         )
       ), "html5compat");
