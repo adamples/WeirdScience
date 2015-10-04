@@ -57,9 +57,11 @@
             </xsl:choose>
           </signature>
           <xsl:copy-of select="document(concat('../../', $temp_path, '/', @src, '.xml'))/image-metadata"/>
+          <description>
+            <xsl:copy-of select="following-sibling::*[1][name()='center']"/>
+          </description>
         </image>
       </xsl:template>
-
 
       <xsl:template match="a">
         <download>

@@ -16,6 +16,7 @@
       <xsl:include href="common.xsl" />
 
       <xsl:template match="/image-metadata">
+        <xsl:variable name="destination_name" select="destination-name"/>
         <html>
           <head>
             <meta charset="utf-8"/>
@@ -33,10 +34,15 @@
               <xsl:attribute name="href">
                 <xsl:text>../../</xsl:text>
                 <xsl:value-of select="document('../../tmp/menu.html')//a[text()=$title]/@href"/>
+                <xsl:text>#img-</xsl:text>
+                <xsl:value-of select="substring-before(substring-after(destination-name, '/'), '.')"/>
               </xsl:attribute>
 
               <img src="{substring-after(destination-name, '/')}" alt='Ilustracja do artykułu "{$title}"' title="{$title}"/>
               <br/>
+
+              <xsl:copy-of select="document(concat('../../', $temp_path, '/metadata.xml'))//image[image-metadata/destination-name=$destination_name]//description/*"/>
+
               <xsl:text>Kliknij, aby powrócić do artykułu </xsl:text>
               <i>
                 <xsl:value-of select="$title"/>

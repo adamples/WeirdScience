@@ -68,3 +68,12 @@
   div#counter {
     display : none;
   }
+
+  div.illustrations + center {
+    display: block;
+    margin: 0;
+  }
+
+  div.illustrations + center > font {
+    font-size: 0.9em;
+  }

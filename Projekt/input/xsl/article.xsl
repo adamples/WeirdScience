@@ -104,6 +104,9 @@
                   <xsl:apply-templates select="document(concat('../../', $temp_path, '/', @src, '.xml'))/image-metadata" mode="src-full"/>
                   <xsl:text>.html</xsl:text>
                 </xsl:attribute>
+                <xsl:attribute name="id">
+                  <xsl:apply-templates select="document(concat('../../', $temp_path, '/', @src, '.xml'))/image-metadata" mode="ident"/>
+                </xsl:attribute>
                 <img alt="Ilustracja: {@title}" title="{@title}">
                   <xsl:if test="position() mod 2=1">
                     <xsl:attribute name="class">even</xsl:attribute>
@@ -135,6 +138,9 @@
             <xsl:apply-templates select="document(concat('../../', $temp_path, '/', @src, '.xml'))/image-metadata" mode="src-full"/>
             <xsl:text>.html</xsl:text>
           </xsl:attribute>
+          <xsl:attribute name="id">
+            <xsl:apply-templates select="document(concat('../../', $temp_path, '/', @src, '.xml'))/image-metadata" mode="ident"/>
+          </xsl:attribute>
           <xsl:if test="position() mod 2=1">
             <xsl:attribute name="class">even</xsl:attribute>
           </xsl:if>
@@ -161,6 +167,11 @@
 
       <xsl:template match="image-metadata" mode="src-thumb">
         <xsl:value-of select="concat('thumbs/', destination-name)"/>
+      </xsl:template>
+
+      <xsl:template match="image-metadata" mode="ident">
+        <xsl:text>img-</xsl:text>
+        <xsl:value-of select="substring-before(substring-after(destination-name, '/'), '.')"/>
       </xsl:template>
 
 

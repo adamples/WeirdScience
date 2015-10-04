@@ -124,7 +124,7 @@
       <xsl:variable name="tmp1">
         <xsl:call-template name="replace">
           <xsl:with-param name="search" select="'*'"/>
-          <xsl:with-param name="replace" select="'×'"/>
+          <xsl:with-param name="replace" select="'*'"/>
           <xsl:with-param name="subject" select="$input"/>
         </xsl:call-template>
       </xsl:variable>

@@ -43,3 +43,14 @@
     border-width : 0;
     margin-bottom : 20px;
   }
+
+  center {
+    display: block;
+    margin: 1.0em 0 2.0em 0;
+  }
+
+  font {
+    color : #ccc ! important;
+    font-size: 1.0em ! important;
+    text-decoration: none ! important;
+  }
