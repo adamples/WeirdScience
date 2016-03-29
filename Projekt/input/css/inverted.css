@@ -1,0 +1,58 @@
+html {
+  background: #f4f0f0;
+}
+
+body {
+  color: black;
+}
+
+* {
+  text-shadow: 1px 1px 0px white ! important;
+}
+
+div.illustrations p.description {
+  text-shadow: 1px 1px 0px black ! important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #343030;
+}
+
+a, a:link {
+  color : #36c;
+  text-decoration : underline;
+}
+
+a:visited {
+  color : #748;
+}
+
+a:hover {
+  color : #593;
+}
+
+a:active {
+  color : #7b5;
+}
+
+li.new-article a {
+  color : #a82;
+}
+
+div#menu, div#footer {
+  background: #ebe8e8;
+  border: #aba8a8;
+}
+
+img, div.illustrations a, object {
+  -webkit-box-shadow: 1px 1px 5px #848080;
+  -moz-box-shadow: 1px 1px 5px #848080;
+  -o-box-shadow: 1px 1px 5px #848080;
+  box-shadow: 1px 1px 5px #848080;
+}
+
+
+a.inverted-style-switcher {
+  color: white;
+  background: black;
+}
