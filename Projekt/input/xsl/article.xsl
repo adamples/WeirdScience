@@ -57,12 +57,6 @@
                 <span class="gmail-email">
                   <xsl:text>moze.dzis</xsl:text>
                 </span>
-                <xsl:text> · design © 2011 — </xsl:text>
-                <xsl:value-of select="document('../../index.xml')//year"/>
-                <xsl:text> Adam Ples </xsl:text>
-                <span class="gmail-email">
-                  <xsl:text>ples.adam</xsl:text>
-                </span>
               </p>
             </div>
           </body>

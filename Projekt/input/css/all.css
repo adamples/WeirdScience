@@ -74,6 +74,10 @@
     margin: 0;
   }
 
-  div.illustrations + center > font {
+  div.illustrations + center > font, img + center > font {
     font-size: 0.9em;
+  }
+
+  center + center > font {
+    font-size: 0.8em;
   }

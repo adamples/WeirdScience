@@ -1,11 +1,12 @@
 #!/usr/bin/ruby
+# encoding: UTF-8
 
 require 'yaml'
-require 'ftools'
+require 'fileutils'
 require 'digest/md5'
 
-require 'ruby/logger'
-require 'ruby/ftp'
+require './ruby/logger'
+require './ruby/ftp'
 
 
 begin
@@ -176,7 +177,7 @@ begin
         else
           @logger.info("Wysyłanie pliku \"#{file[:path]}\"")
           @ftp.putbinaryfile(File.join(@data, file[:path]), File.join(@ftp_root, file[:path]))
-          File.copy(File.join(@data, file[:path]), File.join(@checkout, file[:path]))
+          FileUtils.cp(File.join(@data, file[:path]), File.join(@checkout, file[:path]))
         end
       end
 
@@ -204,5 +205,7 @@ case ARGV[0]
   else uploader.commit
 end
 
-rescue
+rescue Exception => e
+  puts e.message
+  puts e.backtrace.join("\n")
 end

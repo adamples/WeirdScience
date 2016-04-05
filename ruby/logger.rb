@@ -1,4 +1,4 @@
-
+# encoding: UTF-8
 
 class Logger
   TXT_RESET = "\e[0m"
