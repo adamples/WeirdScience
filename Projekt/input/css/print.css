@@ -3,6 +3,10 @@
   display : none;
  }
 
+ h2:after {
+   content: ' — weirdscience.eu';
+ }
+
  a, a:link, a:active, a:visited {
   color : black;
   text-decoration : none;
@@ -15,4 +19,12 @@
  div#footer {
   font-size : 12px;
   margin : 40px 0 0 0;
+ }
+
+ a.inverted-style-switcher {
+   display: none;
+ }
+
+ div.illustrations img.larger, div.illustrations p.description {
+   display: none;
  }

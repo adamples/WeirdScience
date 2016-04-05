@@ -59,6 +59,7 @@
                 </span>
               </p>
             </div>
+            <a class="inverted-style-switcher" href="#">Aa</a>
           </body>
         </html>
         <script type="text/javascript">

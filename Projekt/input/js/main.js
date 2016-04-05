@@ -58,6 +58,25 @@
     //setTimeout("randomizeImage()", 10000);
   }
 
+  function setInvertedStyle() {
+    var isActive = localStorage.getItem("useInvertedStyle") === "true";
+
+    if (isActive) {
+      $("head").append("<link rel='stylesheet' href='css/inverted.css' id='inverted-css'/>");
+    }
+    else {
+      $("#inverted-css").remove();
+    }
+  }
+
+  function toggleInvertedStyle() {
+    var oldValue = localStorage.getItem("useInvertedStyle");
+    var newValue = oldValue === "true" ? "false" : "true";
+    localStorage.setItem("useInvertedStyle", newValue);
+    setInvertedStyle();
+  }
+
+  setInvertedStyle();
 
   $(function () {
     setTimeout ("animateLogo(0)", 1000);
@@ -83,6 +102,12 @@
 
     $("h1").bind ("click", function (event) {
       $(this).append ('<object type="application/x-shockwave-flash" data="player/dewplayer-mini.swf" width="160" height="20" id="dewplayer" name="dewplayer"><param name="wmode" value="transparent"><param name="movie" value="player/dewplayer-mini.swf"><param name="flashvars" value="mp3=player/audio.mp3&amp;autostart=1&amp;volume=50"></object>');
+    });
+
+    $("a.inverted-style-switcher").bind ("click", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      toggleInvertedStyle();
     });
   });
 
