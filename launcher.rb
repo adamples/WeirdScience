@@ -67,11 +67,11 @@ window.signal_connect('delete_event') do
 end
 
 build.signal_connect("clicked") do |w|
-  spawn(term, "php5 main.php5")
+  spawn(term, "php main.php5")
 end
 
 rebuild.signal_connect("clicked") do |w|
-  spawn(term, "rm -r Projekt/tmp Projekt/output; php5 main.php5")
+  spawn(term, "rm -r Projekt/tmp Projekt/output; php main.php5")
 end
 
 upgrade.signal_connect("clicked") do |w|
