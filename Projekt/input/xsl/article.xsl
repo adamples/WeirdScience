@@ -58,6 +58,10 @@
                   <xsl:text>moze.dzis</xsl:text>
                 </span>
               </p>
+<br/>
+              <p>
+                Ta strona używa plików cookie w celu lepszego dostosowania do odbiorcy. Korzystając ze strony wyrażasz zgodę na ich używanie (w tym zapis na swoim urządzeniu końcowym) zgodnie z aktualnymi ustawieniami przeglądarki. Jeśli nie życzysz sobie tego, to możesz wylączyć ich obsługę w ustawieniach przeglądarki internetowej lub opuścić stronę.
+              </p>
             </div>
             <a class="inverted-style-switcher" href="#">Aa</a>
           </body>
