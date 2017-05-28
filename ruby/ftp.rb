@@ -33,7 +33,7 @@ class FtpWrapper
         @ftp = Net::FTP.new(@addr) if @ftp.nil?
       end
 
-      @ftp.passive = true
+      @ftp.passive = false
       @ftp.login(@login, @passwd)
     rescue  Net::FTPError => details
       attempts += 1
