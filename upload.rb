@@ -16,10 +16,7 @@ begin
     def initialize
       @logger = Logger.new
       @ftp = nil
-    end
 
-
-    def connect(dummy = false)
       config = YAML::load(File.open("ftp.config"))
 
       tmp = config["url"].split("@")
@@ -44,12 +41,17 @@ begin
       @logger.info("checkout: #{@checkout}")
       @logger.info("ftp_root: #{@ftp_root}")
 
+      @ftp = nil
+    end
+
+
+    def connect(dummy = false)
       @ftp = FtpWrapper.new(@host, @login, @password, @logger) unless dummy
     end
 
 
     def disconnect
-      @ftp.close
+	    @ftp.close unless @ftp.nil?
     end
 
 
@@ -131,7 +133,6 @@ begin
     def status
       @logger.info("Sprawdzanie statusu repozytorium")
 
-      connect
       on_ftp = scan(@checkout)
       on_data = scan(@data)
 
