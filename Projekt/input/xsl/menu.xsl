@@ -29,7 +29,7 @@
           <xsl:apply-templates select="articles/article"/>
         </xsl:if>
         <xsl:if test="subcategories/*">
-          <xsl:apply-templates select="subcategories/category"/>
+          <xsl:apply-templates select="subcategories/category[name!='Tajne']"/>
         </xsl:if>
       </xsl:template>
 

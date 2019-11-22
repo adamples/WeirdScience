@@ -16,7 +16,7 @@
 
       <xsl:template match="/global-metadata">
         <xsl:text>var images = new Array (</xsl:text>
-        <xsl:apply-templates select="//article-metadata[count(images/image[type='thumb'])!=0]"/>
+        <xsl:apply-templates select="//article-metadata[count(images/image[type='thumb'])!=0 and category!='Tajne']"/>
         <xsl:text>);</xsl:text>
       </xsl:template>
 

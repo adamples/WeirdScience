@@ -18,6 +18,9 @@
           <xsl:copy-of select="document('../../index.xml')//article[temp-path=$temp_path]/date"/>
           <xsl:copy-of select="document('../../index.xml')//article[temp-path=$temp_path]/timestamp"/>
           <xsl:copy-of select="document('../../index.xml')//article[temp-path=$temp_path]/new"/>
+          <category>
+            <xsl:value-of select="document('../../index.xml')//article[temp-path=$temp_path]/../../name"/>
+          </category>
           <original-path>
             <xsl:value-of select="$original_path"/>
           </original-path>
