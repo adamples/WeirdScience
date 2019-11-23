@@ -81,3 +81,7 @@
   center + center > font {
     font-size: 0.8em;
   }
+
+  .top-secret {
+    display: none ! important;
+  }

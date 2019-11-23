@@ -29,13 +29,19 @@
           <xsl:apply-templates select="articles/article"/>
         </xsl:if>
         <xsl:if test="subcategories/*">
-          <xsl:apply-templates select="subcategories/category[name!='Tajne']"/>
+          <xsl:apply-templates select="subcategories/category"/>
         </xsl:if>
       </xsl:template>
 
 
       <xsl:template match="category">
-        <li class="category">
+        <li>
+          <xsl:attribute name="class">
+            <xsl:text>category</xsl:text>
+            <xsl:if test="name='Tajne'">
+              <xsl:text> top-secret</xsl:text>
+            </xsl:if>
+          </xsl:attribute>
           <xsl:value-of select="name"/>
           <xsl:if test="articles/* or subcategories/*">
             <ul>
