@@ -272,3 +272,8 @@
     text-decoration: none ! important;
     padding: 2px 5px;
   }
+
+  table, td, th
+  {
+    border-color: #555;
+  }
