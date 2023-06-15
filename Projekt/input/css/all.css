@@ -103,3 +103,13 @@
     border: 1px solid black;
     padding: 2px 5px;
   }
+
+  table[border="0"], table[border="0"] *
+  {
+    border-width: 0 ! important;
+  }
+
+  .goog-te-gadget
+  {
+    display: none ! important;
+  }

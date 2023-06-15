@@ -20,13 +20,21 @@
         <html>
           <head>
             <meta charset="utf-8"/>
+            <link rel="stylesheet" href="../../css/grid.css" type="text/css" media="all"/>
+            <link rel="stylesheet" href="../../css/all.css" type="text/css" media="all"/>
+            <link rel="stylesheet" href="../../css/screen.css" type="text/css" media="screen"/>
+            <link rel="stylesheet" href="../../css/print.css" type="text/css" media="print"/>
             <link rel="stylesheet" href="../../css/image.css" type="text/css" media="screen"/>
             <title>
               <xsl:value-of select="$title"/>
               <xsl:text> — Weird Science</xsl:text>
             </title>
+            <script src="../../js/jquery.js"> </script>
+            <script src="../../js/images.js"> </script>
+            <script src="../../js/main.js"> </script>
           </head>
           <body>
+            <div id="google_translate_element"/>
             <h1>
               <xsl:text>Weird Science</xsl:text>
             </h1>
@@ -50,6 +58,7 @@
             </a>
           </body>
         </html>
+        <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"> </script>
       </xsl:template>
 
   </xsl:stylesheet>

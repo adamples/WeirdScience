@@ -20,7 +20,7 @@ include "php/common.php5";
       $this->make->registerMethod (new MakeThumb (270, 200, 60, true), "thumb");
       $this->make->registerMethod (new MakeThumb (270, 200, 60, true, 1.1), "large-thumb");
       $this->make->registerMethod (new MakeCoolThumb (), "cool-thumb");
-      $this->make->registerMethod (new MakeThumb (800, 600, 95, false), "normal");
+      $this->make->registerMethod (new MakeThumb (1200, 900, 95, false), "normal");
       $this->make->registerMethod (new MakeImageMetadata, "image-metadata");
       $this->make->registerMethod (new MakeStrReplace (array ("&", "&amp;lt;", "allowfullscreen>", "src=\"//"), array ("&amp;", "&lt;", "allowfullscreen=\"allowfullscreen\"> ", "src=\"http://")), "preprocessing");
       $this->make->registerMethod (new MakeExternal ("composite -gravity SouthWest \$2 \$1 \$o"), "watermark");
@@ -59,10 +59,17 @@ include "php/common.php5";
 
 
     protected function title_for_natural_order ($s) {
-      return preg_replace_callback(
+      $result = preg_replace_callback(
         '/\d+/',
         function ($matches) { return str_pad($matches[0], 10, '0', STR_PAD_LEFT); },
-        $s);
+        $s
+      );
+
+      if ($result[0] == '!') {
+        $result = substr($result, 1);
+      }
+
+      return $result;
     }
 
 

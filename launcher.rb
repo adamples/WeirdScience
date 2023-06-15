@@ -10,7 +10,7 @@ FileUtils.cd(File.dirname(__FILE__))
 $pid = nil
 
 def spawn(term, command, newline = true)
-  %x[kill -9 #{$pid}] unless $pid.nil?
+  %x[kill -9 #{$pid} 2>&1 >/dev/null] unless $pid.nil?
 
   if newline
     argv = ["/bin/bash", "-c", "echo -en '\n\n';" + command]

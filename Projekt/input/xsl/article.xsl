@@ -26,12 +26,14 @@
             <script src="js/jquery.js"> </script>
             <script src="js/images.js"> </script>
             <script src="js/main.js"> </script>
+            <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"> </script>
             <title>
               <xsl:value-of select="$title"/>
               <xsl:text> — Weird Science</xsl:text>
             </title>
           </head>
           <body>
+            <div id="google_translate_element"/>
             <h1>
               <xsl:text>Weird Science</xsl:text>
             </h1>

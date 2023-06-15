@@ -18,11 +18,11 @@ define ("TXT_GRAY", "\033[0m");
 list ($B_MICRO, $B_SEC) = explode (" ", microtime ());
 
 
-  function autoload ($class_name) {
+  function autoload_class ($class_name) {
       include __DIR__ . '/' . $class_name . ".class.php5";
   }
 
-  spl_autoload_register('autoload');
+  spl_autoload_register("autoload_class");
 
 
   function has_interface ($object, $interface) {
@@ -126,8 +126,13 @@ list ($B_MICRO, $B_SEC) = explode (" ", microtime ());
   }
 
 
-  function image_output_path ($input_path) {
-    $input_path = realpath ($input_path);
+  function image_output_path ($image_path) {
+    $input_path = realpath ($image_path);
+
+    if ($input_path == null || $input_path == "")
+    {
+      log_write ("image_output_path (): Plik nie istnieje: \"$image_path\"", LOG_E);
+    }
 
     $subdirs = 1;
 

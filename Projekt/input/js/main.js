@@ -76,6 +76,13 @@
     setInvertedStyle();
   }
 
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({ 
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+      pageLanguage: 'pl'
+    }, 'google_translate_element');
+  }
+
   setInvertedStyle();
 
   $(function () {
