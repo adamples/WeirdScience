@@ -31,7 +31,7 @@
             <xsl:apply-templates select=".//img"/>
           </images>
           <downloads>
-            <xsl:apply-templates select=".//a[substring(@href, 1, 7)!='http://' and substring-before(@href, '.html')='']"/>
+            <xsl:apply-templates select=".//a[@href and substring(@href, 1, 7)!='http://' and substring(@href, 1, 8)!='https://' and substring(@href, 1, 1)!='#' and substring-before(@href, '.html')='']"/>
           </downloads>
         </article-metadata>
       </xsl:template>

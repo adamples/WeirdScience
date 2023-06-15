@@ -18,9 +18,11 @@ define ("TXT_GRAY", "\033[0m");
 list ($B_MICRO, $B_SEC) = explode (" ", microtime ());
 
 
-  function __autoload ($class_name) {
+  function autoload ($class_name) {
       include $class_name . ".class.php5";
   }
+
+  spl_autoload_register('autoload');
 
 
   function has_interface ($object, $interface) {
@@ -80,8 +82,8 @@ list ($B_MICRO, $B_SEC) = explode (" ", microtime ());
     $result = '';
       if (is_string ($input) && is_string ($charset)) {
           for ($i = 0, $c = strlen ($input); $i < $c; $i++)
-            if (strpos ($charset, $input {$i}) !== false)
-              $result .= $input {$i};
+            if (strpos ($charset, $input[$i]) !== false)
+              $result .= $input[$i];
       }
     return $result;
   }
@@ -136,7 +138,7 @@ list ($B_MICRO, $B_SEC) = explode (" ", microtime ());
     $result = "";
 
     for ($i = 0; $i < $subdirs; ++$i)
-      $result .= $name{$i} . "/";
+      $result .= $name[$i] . "/";
 
     $result .= $name . "." . $ext;
     return $result;

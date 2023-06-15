@@ -52,8 +52,8 @@ include "php/common.php5";
     protected function article_title_escape ($s) {
       $result = "";
         for ($i = 0, $c = strlen ($s); $i < $c; $i++)
-          if (strstr ('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz', $s {$i}))
-            $result .= $s {$i};
+          if (strstr ('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz', $s[$i]))
+            $result .= $s[$i];
       return $result;
     }
 
@@ -61,7 +61,7 @@ include "php/common.php5";
     protected function scan ($path) {
       $name = basename ($path);
 
-      if ($name {0} == "~")
+      if ($name[0] == "~")
         return NULL;
 
       /* Artykuł */
@@ -72,7 +72,7 @@ include "php/common.php5";
         $mtime = strtotime(date("Y-m-d", $mtime));
         $new = "false";
 
-        if ($name{0} == "!") {
+        if ($name[0] == "!") {
           $title = substr($name, 1);
           $new = "true";
         }
@@ -173,7 +173,8 @@ include "php/common.php5";
 
 
     protected function create_index () {
-      $doc = DOMDocument::loadXML("<index><year>" . date("Y") . "</year>" . $this->build_index($this->hierarchy) . "</index>");
+      $doc = new DOMDocument();
+      $doc->loadXML("<index><year>" . date("Y") . "</year>" . $this->build_index($this->hierarchy) . "</index>");
       $doc->encoding = "UTF-8";
       $doc->formatOutput = true;
       $doc->save ("index.xml");
@@ -182,9 +183,9 @@ include "php/common.php5";
 
     protected function add_dir ($in_dir, $out_dir, $method = "cat") {
       foreach (glob ("$in_dir/*") as $path)
-        if (is_file ($path) && $path{0} != ".") {
+        if (is_file ($path) && $path[0] != ".") {
           $this->make->addRule (array ($path), $out_dir . "/" . basename ($path), $method);
-        } elseif (is_dir ($path) && $path{0} != ".") {
+        } elseif (is_dir ($path) && $path[0] != ".") {
           $this->add_dir ($path, $out_dir . "/" . basename ($path), $method);
         }
     }
@@ -250,7 +251,8 @@ include "php/common.php5";
 
 
     protected function add_rules_stage_2 () {
-      $doc = DOMDocument::load ("tmp/metadata.xml");
+      $doc = new DOMDocument();
+      $doc->load("tmp/metadata.xml");
 
       $xpath = new DOMXPath ($doc);
 

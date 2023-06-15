@@ -233,7 +233,7 @@
         </h4>
       </xsl:template>
 
-      <xsl:template match="a[substring(@href, 1, 7)!='http://' and substring-before(@href, '.html')='']">
+      <xsl:template match="a[@href and substring(@href, 1, 7)!='http://' and substring(@href, 1, 8)!='https://' and substring(@href, 1, 1)!='#' and substring-before(@href, '.html')='']">
         <a href="downloads/{@href}">
           <xsl:apply-templates select="text()"/>
         </a>
