@@ -71,7 +71,7 @@ build.signal_connect("clicked") do |w|
 end
 
 rebuild.signal_connect("clicked") do |w|
-  spawn(term, "rm -r Projekt/tmp Projekt/output; php main.php5")
+  spawn(term, "rm -r Projekt/tmp Projekt/output Projekt/index.xml; php main.php5")
 end
 
 upgrade.signal_connect("clicked") do |w|

@@ -19,7 +19,7 @@ list ($B_MICRO, $B_SEC) = explode (" ", microtime ());
 
 
   function autoload ($class_name) {
-      include $class_name . ".class.php5";
+      include __DIR__ . '/' . $class_name . ".class.php5";
   }
 
   spl_autoload_register('autoload');

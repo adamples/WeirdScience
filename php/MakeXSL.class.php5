@@ -2,6 +2,7 @@
 
   class MakeXSL implements MakeMethod {
 
+      const SAXON_COMMAND = 'java -jar "' . __DIR__ . '/../3rd_party/SaxonHE12-5J/saxon-he-12.5.jar"';
 
       public function __construct () {
       }
@@ -30,7 +31,7 @@
 
             if (strpos ($tmp, "version=\"2.0\"") !== FALSE) {
               echo "(XSLT 2.0) ";
-              exec ("saxonb-xslt -o:\"$output\" -xsl:\"$stylesheet\" -s:\"$xml\" 2> /dev/stdout", $exec_out, $ret);
+              exec (MakeXSL::SAXON_COMMAND . " -o:\"$output\" -xsl:\"$stylesheet\" -s:\"$xml\" 2> /dev/stdout", $exec_out, $ret);
             } else {
               //~ echo "\n\nxsltproc -o \"$output\" $p \"$stylesheet\" \"$xml\" 2> /dev/stdout\n\n";
               exec ("xsltproc -o \"$output\" $p \"$stylesheet\" \"$xml\" 2> /dev/stdout", $exec_out, $ret);

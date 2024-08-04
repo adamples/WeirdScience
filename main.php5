@@ -58,6 +58,16 @@ include "php/common.php5";
     }
 
 
+    protected function title_for_natural_order ($s) {
+      if (preg_match('/(.+?)(\d+)$/', '', $matches))
+      {
+        return $matches[1] . str_pad($matches[2], 10, '0', STR_PAD_LEFT);
+      }
+
+      return $s;
+    }
+
+
     protected function scan ($path) {
       $name = basename ($path);
 
