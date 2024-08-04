@@ -46,7 +46,7 @@
           <xsl:if test="articles/* or subcategories/*">
             <ul>
               <xsl:apply-templates select="articles/article|subcategories/category">
-                <xsl:sort select="concat(name, title)" data-type="text" order="ascending" collation="http://saxon.sf.net/collation?lang=pl_PL"/>
+                <xsl:sort select="order-key" data-type="text" order="ascending" collation="http://saxon.sf.net/collation?lang=pl_PL"/>
               </xsl:apply-templates>
             </ul>
           </xsl:if>

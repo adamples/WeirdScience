@@ -43,7 +43,7 @@ include "php/common.php5";
     protected function article_temp_path ($title) {
       $result = strtoascii($title);
       $result = strtolower($result);
-      $result = strtocharset($result, "abcdefghijklmnopqrstuvwxyz");
+      $result = strtocharset($result, "abcdefghijklmnopqrstuvwxyz0123456789");
       $result = "tmp/$result";
       return $result;
     }
@@ -52,19 +52,17 @@ include "php/common.php5";
     protected function article_title_escape ($s) {
       $result = "";
         for ($i = 0, $c = strlen ($s); $i < $c; $i++)
-          if (strstr ('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz', $s[$i]))
+          if (strstr ('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01923456789', $s[$i]))
             $result .= $s[$i];
       return $result;
     }
 
 
     protected function title_for_natural_order ($s) {
-      if (preg_match('/(.+?)(\d+)$/', '', $matches))
-      {
-        return $matches[1] . str_pad($matches[2], 10, '0', STR_PAD_LEFT);
-      }
-
-      return $s;
+      return preg_replace_callback(
+        '/\d+/',
+        function ($matches) { return str_pad($matches[0], 10, '0', STR_PAD_LEFT); },
+        $s);
     }
 
 
@@ -96,6 +94,7 @@ include "php/common.php5";
           "new" => $new,
           "temp_path" => $this->article_temp_path ($name),
           "escaped_title" => $this->article_title_escape ($name),
+          "order_key" => $this->title_for_natural_order ($name),
           "images" => array ()
         );
 
@@ -118,6 +117,7 @@ include "php/common.php5";
         $result = array (
           "type" => "category",
           "name" => $name,
+          "order_key" => $this->title_for_natural_order ($name),
           "subcategories" => array (),
           "articles" => array ()
         );
@@ -167,6 +167,7 @@ include "php/common.php5";
           "<new>" . $element["new"] . "</new>" .
           "<temp-path>" . $element["temp_path"] . "</temp-path>" .
           "<escaped-title>" . $element["escaped_title"] . "</escaped-title>" .
+          "<order-key>" . $element["order_key"] . "</order-key>" .
           "</article>";
 
       } else {
@@ -174,6 +175,7 @@ include "php/common.php5";
         return
           "<category>" .
           "<name>" . $element["name"] . "</name>" .
+          "<order-key>" . $element["order_key"] . "</order-key>" .
           "<articles>" . $this->build_index ($element["articles"]) . "</articles>" .
           "<subcategories>" . $this->build_index ($element["subcategories"]) . "</subcategories>" .
           "</category>";
